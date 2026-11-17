@@ -4,7 +4,13 @@ import { AlertCircleIcon, CheckCircleIcon, PlusIcon,  UnplugIcon,} from "lucide-
 import { PLATFORMS } from "../assets/assets";
 
 interface AccountListProps {
-  accounts: any[];
+  accounts: {
+    _id?: string;
+    id?: string;
+    platform: string;
+    handle: string;
+    status: "connected" | "disconnected";
+  }[];
   onDisconnect: (accountId: string) => Promise<void>;
 }
 
@@ -41,6 +47,7 @@ const AccountList = ({ accounts, onDisconnect }: AccountListProps) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {accounts.map((account, index) => {
+        const accountId = account._id ?? account.id;
         const meta = PLATFORMS.find(
           (p) => p.id === account.platform
         );
@@ -85,7 +92,7 @@ const AccountList = ({ accounts, onDisconnect }: AccountListProps) => {
             </div>
 
             <button
-              onClick={() => handleDisconnect(account._id || account.id)}
+              onClick={() => accountId && handleDisconnect(accountId)}
               title="Disconnect account"
               className="ml-2 p-1.5 rounded-lg text-slate-300 group-hover:text-red-500 transition-all"
             >

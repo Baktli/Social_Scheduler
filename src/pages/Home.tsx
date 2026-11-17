@@ -1,13 +1,13 @@
-import Navbar from "../components/Home/Navbar";
-import Hero from "../components/Home/Hero";
-import Features from "../components/Home/Features";
-import HowItWorks from "../components/Home/HowItWorks";
-import Testimonials from "../components/Home/Testimonials";
-import Pricing from "../components/Home/Pricing";
-import CTA from "../components/Home/CTA";
-import Footer from "../components/Home/Footer";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Features from "../components/Features";
+import HowItWorks from "../components/HowItWorks";
+import Testimonials from "../components/Testimonials";
+import Pricing from "../components/Pricing";
+import CTA from "../components/CTA";
+import Footer from "../components/Footer";
 
-export default function Landing() {
+export default function Home() {
     return (
         <div className="min-h-screen bg-white text-slate-900 font-sans">
             <Navbar />
@@ -21,3 +21,5 @@ export default function Landing() {
         </div>
     );
 }
+
+/*export default Home*/
