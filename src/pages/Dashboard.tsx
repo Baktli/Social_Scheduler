@@ -1,6 +1,6 @@
 import { ActivityIcon, CheckCircleIcon, ClockIcon, SendIcon, Share2Icon, TrendingUpIcon } from "lucide-react"
 import { useEffect, useState } from "react"
-import { data } from "react-router-dom"
+/*import { data } from "react-router-dom"*/
 import { dummyAccountsData, dummyActivityData, dummyPostsData } from "../assets/assets"
 
 
