@@ -24,7 +24,7 @@ const Layout = () => {
     <div className="flex h-scr4een bg-slate-50">
 
         {/* Mobile Overlay*/}
-     {isMobileMenuOpen && <div className = "fixed inset-0 bg-slate-900/50 z-40 md:hidden" onClick={()=> setIsMobileMenuOpen(false)}/>}   
+     {isMobileMenuOpen && <div className = "fixed inset-0 bg-slate-900/50 z-40 md:flex md:w-0 md:overflow-hidden" onClick={()=> setIsMobileMenuOpen(false)}/>}   
         
         <Sidebar isOpen = {isMobileMenuOpen} setIsOpen = {setIsMobileMenuOpen} />
 
@@ -32,7 +32,7 @@ const Layout = () => {
           {/* Top Bar */}
           <header className="h-16 bg-white border-b border-slate-200 flex items-center px-4 md:px-8 gap-4">
 
-            <button className="md:hidden p-2 -ml-2 text-slate-500" onClick={()=>setIsMobileMenuOpen(true)} >
+            <button className="md:flex p-2 -ml-2 text-slate-500" onClick={()=>setIsMobileMenuOpen(true)} >
                 <MenuIcon className="size-6" />
             </button>
             <div>
