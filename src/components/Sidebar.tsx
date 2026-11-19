@@ -1,4 +1,4 @@
-import { CalendarDaysIcon, LayoutDashboardIcon, LogOutIcon, UserIcon, Wand2Icon } from "lucide-react"
+import { CalendarDaysIcon, LayoutDashboardIcon, LogOutIcon, UserIcon, Wand2Icon, XIcon } from "lucide-react"
 import { NavLink, useLocation, useNavigate } from "react-router-dom"
 
 
@@ -26,11 +26,12 @@ const Sidebar = ({isOpen, setIsOpen} : {isOpen: boolean, setIsOpen: (val: boolea
     <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 flex flex-col h-full transform transition-transform duration-200 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
         
         {/*Logo */}
-        <div className="p-6 pb-4" >
-            <div className="text-xl tracking-tiht text-slate-800 flex items-center gap-1.5"> 
+        <div className="p-6 pb-4 flex items-center justify-between" >
+            <div className="text-xl tracking-tiht text-slate-800 flex items-center gap-1.5">
                 <img src="/logo.svg" alt="logo" className="size-6" />
                 Scheduler
             </div>
+            <button type="button" onClick={() => setIsOpen(false)} className="p-1.5 shrink-0 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors" aria-label="Close sidebar"><XIcon className="size-5 " /></button>
 
         </div>
 
@@ -79,7 +80,6 @@ const Sidebar = ({isOpen, setIsOpen} : {isOpen: boolean, setIsOpen: (val: boolea
                 Sign Out
             </button>
         </div>
-
     </div>
   )
 }
